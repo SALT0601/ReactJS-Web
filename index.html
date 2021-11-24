@@ -68,7 +68,7 @@
           <div>
             <label htmlFor="km">KM</label>
             <input
-              value={flipped ? Math.round(distance / 0.621371) : distance}
+              value={flipped ? Math.round(distance * 1.609344) : distance}
               id="km"
               placeholder="KM"
               type="number"
@@ -79,7 +79,7 @@
           <div>
             <label htmlFor="miles">Miles</label>
             <input
-              value={flipped ? distance : Math.round(distance * 1.609344)}
+              value={flipped ? distance : Math.round(distance * 0.621371)}
               id="miles"
               placeholder="Miles"
               type="number"
