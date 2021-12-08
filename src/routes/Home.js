@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
 
 function Home(){
     const [loading, setLoading] = useState(true);
-  
+
     const [movies, setMovies] = useState([]);
     const getMovies = async () => {
       const json = await (
@@ -15,17 +15,17 @@ function Home(){
       setLoading(false);
     };
     useEffect(() => {
-     
+
       getMovies();
     }, []);
     return (
       <div>
-       
+
         {loading ? (
-          
+
           <h1>Loading...</h1>
         ) : (
-          
+
           <div>
             {movies.map((movie) => (
               <Movie 
@@ -36,10 +36,10 @@ function Home(){
                 genres={movie.genres}
               />
             ))}
-         
+
           </div>
         )}
       </div>
     );
   }
-  export default Home;
+  export default Home; 
