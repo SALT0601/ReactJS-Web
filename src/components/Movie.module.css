@@ -1,5 +1,6 @@
 .movie {
-  background-color: white;
+  background-color: rgb(226, 50, 50);
+  opacity: 50;
   margin-bottom: 70px;
   font-weight: 300;
   padding: 20px;
@@ -29,12 +30,14 @@
   margin: 0;
   font-weight: 300;
   text-decoration: none;
+  color: #ececec;
 }
 
 .movie__title a {
   margin-bottom: 5px;
   font-size: 24px;
-  color: #2c2c2c;
+  color: #ececec;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -45,10 +48,15 @@
   display: flex;
   flex-wrap: wrap;
   margin: 5px 0px;
+  color: #ececec;
 }
 
 .movie__genres li,
 .movie__year {
   margin-right: 10px;
   font-size: 14px;
+  color: #d8d8d8;
+}
+.movie__summary {
+  color: #d8d8d8;
 }

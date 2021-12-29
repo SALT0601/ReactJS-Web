@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect, useCallback } from "react"
+import Navbar from "../components/Navbar.js"
 
 
 function Detail() {
@@ -17,18 +18,21 @@ function Detail() {
         getMovie()
     }, [getMovie])
     return (
-        <div>
-            {loading ? <div><img alt="loading"  /><p><b>Loading...</b></p></div> :
+        <div style={{textAlign: "center"}}>
+            {loading ? <div style={{ color:"#ececec", height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", fontWeight: 300}}><p><b>Loading...</b></p></div> :
                 <div>
+                    <Navbar />
                    
-                    <div >
-                        <h1>{movie.title_long}</h1>
+                    <div  style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+                        <h1 style={{color:"#ececec"}}>{movie.title_long}</h1>
+                        
                         <strong>
-                            <span>Genre: {movie.genres.map((genre, index) => <span key={index}>{index < (movie.genres.length-1) ? `${genre}, ` : `${genre}`}</span>)}</span>
-                            <p>평점: {movie.rating} / 10</p>
+                            <span style={{color:"#ececec", fontSize: 15}}>Genre: {movie.genres.map((genre, index) => <span key={index}>{index < (movie.genres.length-1) ? `${genre}, ` : `${genre}`}</span>)}</span>
+                            <p style={{ color:"#ececec", margin: 5}}>평점: {movie.rating} / 10</p>
                         </strong>
-                        <p >{movie.description_full}</p>
                         <img alt="movie-cover" src={movie.medium_cover_image}></img>
+                        <p style={{ color:"#ececec", width: "70%"}}>{movie.description_full}</p>
+                        
                     </div>
                 </div>
             }
